@@ -12,5 +12,10 @@ public interface Repository extends JpaRepository<Todo, Integer>{
 
 	@Query("SELECT obj FROM Todo obj WHERE obj.finalizado = false ORDER BY obj.dataParaFinalizar")
 	List<Todo> findAllOpen();
+	
+	@Query("SELECT obj FROM Todo obj WHERE obj.finalizado = true ORDER BY obj.dataParaFinalizar")
+	List<Todo> findAllClosed();
+
+	
 
 }
