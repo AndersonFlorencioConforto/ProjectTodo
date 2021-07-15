@@ -22,12 +22,16 @@ public class DBService {
 		Todo t1 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular",
 				sdf.parse("22/05/1998"), false);
 		Todo t2 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular",
-				sdf.parse("22/05/1998"), false);
+				sdf.parse("22/05/1998"), true);
 		Todo t3 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular",
 				sdf.parse("22/05/1998"), true);
 		Todo t4 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular",
 				sdf.parse("22/05/1998"), true);
+		Todo t5 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular",
+				sdf.parse("22/05/1998"), true);
+		Todo t6 = new Todo(null, "Estudar", "Estudar Spring Boot 2 e Angular",
+				sdf.parse("22/05/1998"), false);
 
-		repository.saveAll(Arrays.asList(t1,t2,t3,t4));
+		repository.saveAll(Arrays.asList(t1,t2,t3,t4,t5,t6));
 	}
 }

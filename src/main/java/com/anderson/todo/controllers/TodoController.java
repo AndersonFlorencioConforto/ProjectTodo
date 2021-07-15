@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+
+import com.anderson.todo.DTO.TodoDTO;
 import com.anderson.todo.Model.Todo;
 import com.anderson.todo.services.TodoService;
 @CrossOrigin("*")
@@ -56,8 +58,9 @@ public class TodoController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Todo> create(@RequestBody Todo obj){
-		obj = service.create(obj);
+	public ResponseEntity<Todo> create(@RequestBody TodoDTO obj){
+		Todo obj2 = service.create2(obj);
+		obj2 = service.create(obj2);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
 		return ResponseEntity.created(uri).build();
 		

@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.anderson.todo.DTO.TodoDTO;
 import com.anderson.todo.Model.Todo;
 import com.anderson.todo.repositories.Repository;
 import com.anderson.todo.services.exceptions.ObjectNotFoundException;
@@ -53,6 +54,10 @@ public class TodoService {
 		newObj.setDescricao(obj.getDescricao());
 		newObj.setFinalizado(obj.getFinalizado());
 		return repository.save(newObj);
+	}
+
+	public Todo create2(TodoDTO obj) {
+		return new Todo(obj.getId(),obj.getDescricao(),obj.getTitulo(),obj.getDataParaFinalizar(),obj.getFinalizado());
 	}
 
 }
